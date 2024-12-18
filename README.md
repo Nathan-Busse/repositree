@@ -2,7 +2,7 @@
 
 A sleek, modern web application that generates a beautiful file tree structure from any public GitHub repository. Perfect for documenting your project's structure in README files.
 
-![File Tree Generator](https://github.com/stackblitz/file-tree-generator/raw/main/preview.png)
+![repositree-screens](/repositree-screens.png)
 
 ## Features
 
@@ -43,8 +43,8 @@ src/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/stackblitz/file-tree-generator.git
-cd file-tree-generator
+git clone https://github.com/abishekvenkat/repositree.git
+cd repositree
 ```
 
 2. Install dependencies:
