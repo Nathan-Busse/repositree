@@ -8,9 +8,9 @@ interface TreeDisplayProps {
 }
 
 export const TreeDisplay: React.FC<TreeDisplayProps> = ({ tree }) => {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false);  
   const treeText = generateTreeText(tree);
-  
+
   const copyToClipboard = async () => {
     await navigator.clipboard.writeText(treeText);
     setCopied(true);

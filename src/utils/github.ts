@@ -5,7 +5,7 @@ interface TreeNode {
 }
 
 export async function fetchRepoStructure(repoUrl: string): Promise<TreeNode> {
-  // Extract owner and repo from URL
+  
   const urlParts = repoUrl.split('/');
   const owner = urlParts[urlParts.length - 2];
   const repo = urlParts[urlParts.length - 1];
@@ -33,14 +33,14 @@ function processGitHubTree(items: any[]): TreeNode {
 
     parts.forEach((part, index) => {
       if (index === parts.length - 1) {
-        // It's a file
+        //File
         current.children = current.children || [];
         current.children.push({
           name: part,
           type: 'file',
         });
       } else {
-        // It's a directory
+        //Directory
         current.children = current.children || [];
         let dir = current.children.find(
           (child) => child.name === part && child.type === 'directory'

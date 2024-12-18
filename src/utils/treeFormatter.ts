@@ -14,7 +14,20 @@ export function generateTreeText(tree: TreeNode): string {
     const connector = isLast ? '└── ' : '├── ';
     const childPrefix = isLast ? '    ' : '│   ';
     
+    if (node.type === 'directory') {
+      const existingIndex = lines.findIndex((l) => 
+        l.endsWith(node.name) && !l.endsWith('/')
+      );
+    
+      if (existingIndex !== -1) {
+        lines.splice(existingIndex, 1);
+      }
+    }
+    if (node.name === '.gitignore') {
+      return;
+    }
     lines.push(prefix + connector + node.name + (node.type === 'directory' ? '/' : ''));
+    
     
     if (node.children) {
       node.children.forEach((child, index) => {
@@ -24,5 +37,6 @@ export function generateTreeText(tree: TreeNode): string {
   }
   
   traverse(tree);
+
   return lines.join('\n');
 }

@@ -22,7 +22,7 @@ function App() {
       const data = await fetchRepoStructure(cleanUrl);
       setFileTree(data);
     } catch (err) {
-      setError('Failed to fetch repository data. Please check the URL and try again.');
+      setError('Failed to fetch repository data. Please check the URL and the repo visibility, and try again.');
     } finally {
       setLoading(false);
     }
