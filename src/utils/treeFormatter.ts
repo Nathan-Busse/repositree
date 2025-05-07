@@ -10,7 +10,8 @@ export function generateTreeText(tree: TreeNode): string {
       });
       return;
     }
-
+    const markdownHeaderTag = isFirst ? '~~~markdown';
+    constmmarkdownFooterTag = isLast ? '~~~';
     const connector = isLast ? '└── ' : '├── ';
     const childPrefix = isLast ? '    ' : '│   ';
     
